@@ -1,7 +1,7 @@
 pipeline{
     def buildnumber=BUILD_NUMBER
 tools{
-maven "maven3.8.4"
+maven "maven3.8.5"
 }
 
     stage('Clone repository') {

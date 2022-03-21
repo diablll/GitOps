@@ -1,12 +1,7 @@
-pipeline{
-   
-    def buildnumber=BUILD_NUMBER
-    def mavenHome = tool name: 'maven3.8.5'
+node {
 
-    stage('Clone repository') {
-      
-
-        checkout scm
+    stage('SCM Clone') {
+        git credentialsID: 'github' ,url: 'https://github.com/diablll/GitOps.git'
     }
 
     stage('Update GIT') {
@@ -18,7 +13,7 @@ pipeline{
                         sh "git config user.name diablll"
                         //sh "git switch master"
                         sh "cat deployment.yaml"
-                        sh "sed -i 's+bajod/helloworld.*+bajod/spring:${DOCKERTAG}+g' deployment.yaml"
+                        sh "sed -i 's+bajod/spring.*+bajod/spring:${DOCKERTAG}+g' deployment.yaml"
                         sh "cat deployment.yaml"
                         sh "git add ."
                         sh "git commit -m 'Done by Jenkins Job changemanifest: ${env.BUILD_NUMBER}'"

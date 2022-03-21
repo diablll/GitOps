@@ -28,7 +28,7 @@ kind: Service
 metadata:
   name: lb-service
   labels:
-    app: lb-service
+    app: spring
 spec:
   type: LoadBalancer
   ports:

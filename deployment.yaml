@@ -3,23 +3,23 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    app: helloworld
-  name: helloworld
+    app: spring
+  name: spring
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: helloworld
+      app: spring
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: helloworld
+        app: spring
     spec:
       containers:
-      - image: bajod/helloworld:6
-        name: helloworld
+      - image: bajod/spring:latest
+        name: spring
         resources: {}
 status: {}
 ---
@@ -35,4 +35,4 @@ spec:
   - port: 80
     targetPort: 5000
   selector:
-    app: helloworld
+    app: spring

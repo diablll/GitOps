@@ -18,7 +18,7 @@ spec:
         app: spring
     spec:
       containers:
-      - image: bajod/spring:12
+      - image: bajod/spring:13
         name: spring
         resources: {}
 status: {}

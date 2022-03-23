@@ -18,7 +18,7 @@ spec:
         app: spring
     spec:
       containers:
-      - image: bajod/spring:2
+      - image: bajod/spring:4
         name: spring
         ports:
         - containerPort: 8080
